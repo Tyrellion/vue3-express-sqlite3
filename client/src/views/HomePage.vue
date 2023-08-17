@@ -17,7 +17,7 @@
         </n-space>
     <div v-for="(blog, index) in blogListInfo" style="margin-bottom:15px;cursor: pointer;">
           <n-card :title="blog.title" @click="toDetail(blog)">
-            {{ blog.content }}
+            {{ blog.content.replace(/<[^>]+>/g, '') }}<!-- 将博客内容中的所有 HTML 标签都去除 -->
 
             <template #footer>
                         <n-space align="center">

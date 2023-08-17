@@ -4,7 +4,7 @@
       <n-tab-pane name="list" tab="文章列表">
         <div v-for="(blog, index) in blogListInfo" style="margin-bottom:15px">
           <n-card :title="blog.title">
-            {{ blog.content }}
+            {{ blog.content.replace(/<[^>]+>/g, '') }}<!-- 将博客内容中的所有 HTML 标签都去除 -->
 
             <template #footer>
                         <n-space align="center">

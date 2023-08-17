@@ -18,8 +18,8 @@
 <!-- 分页-->
 
         <n-space>
-                <div @click="toPage(pageNum)" v-for="pageNum in  pageInfo.pageCount"> <!--pageNum为v-for生成，故点击对应按钮就是对应pageNum-->
-                    <div :style="'color:' + (pageNum == pageInfo.page ? 'blue' : '')">{{ pageNum }}</div>
+                <div @click="toPage(pageNum)" v-for="pageNum in  pageInfo.pageCount" style="cursor: pointer;"> <!--pageNum为v-for生成，故点击对应按钮就是对应pageNum-->
+                    <div :style="'color:' + (pageNum == pageInfo.page ? 'rgb(253, 102, 67)' : '')" >{{ pageNum }}</div>
                 </div>
             </n-space>
       </n-tab-pane>

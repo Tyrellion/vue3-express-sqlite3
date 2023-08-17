@@ -1,7 +1,8 @@
 <template>
   <div class="main-panel">
     <div class="menus">
-        <div v-for="(menu, index) in menus" @click="toPage(menu)">
+        <div v-for="(menu, index) in menus" @click="toPage(menu,index)" 
+        :class="{ 'selected': selectedMenuIndex === index }">
                 {{ menu.name }}
             </div>
         </div>
@@ -15,6 +16,7 @@
 </template>
 
 <script setup>
+import { color } from 'echarts';
 import { AdminStore } from '../../stores/AdminStore'
 import { ref, reactive, inject } from 'vue'
 
@@ -27,6 +29,7 @@ const axios = inject("axios")
 const adminStore = AdminStore()
 
 
+const selectedMenuIndex = ref(-1); // 记录选中的菜单索引，默认为-1
 //菜单
 let menus = [
     { name: "文章管理", href: "/dashboard/article" },
@@ -35,7 +38,8 @@ let menus = [
     { name: "退出", href: "logout" },
 ];
 //路由跳转
-const toPage = (menu) => {
+const toPage = (menu,index) => {
+    selectedMenuIndex.value = index
     if (menu.href == 'logout') {
         router.push("/login")
     } else {
@@ -78,4 +82,7 @@ const toPage = (menu) => {
     right: calc((100vw - 1500px) / 2);
     bottom: 20px;
 }
+.selected {
+    color: #fd760e; /* 设置选中菜单的颜色 */
+  }
 </style>

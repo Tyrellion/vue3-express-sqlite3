@@ -7,7 +7,6 @@
         <th>编号</th>
         <th>名称</th>
         <th>操作</th>
-        <th>万事开头难</th>
       </tr>
     </thead>
     <tbody>

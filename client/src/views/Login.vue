@@ -66,7 +66,7 @@ const login = async () => {
             localStorage.setItem("password", admin.password)
             localStorage.setItem("rember", admin.rember ? 1 : 0)
         }
-        router.push("/dashboard")//登录成功后路由跳转
+        router.push("/dashboard/article")//登录成功后路由直接跳转文章管理页
         message.info("登录成功")
     } else {
         message.error("登录失败")

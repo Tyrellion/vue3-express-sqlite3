@@ -5,6 +5,7 @@
                 {{ menu.name }}
             </div>
         </div>
+        <!-- 下面为显示内容的右侧大面积 -->
         <div style="padding:20px;width:100%">
             <router-view></router-view>
         </div>
@@ -30,6 +31,7 @@ const adminStore = AdminStore()
 let menus = [
     { name: "文章管理", href: "/dashboard/article" },
     { name: "分类管理", href: "/dashboard/category" },
+    { name: "用户界面", href: "/" },
     { name: "退出", href: "logout" },
 ];
 //路由跳转

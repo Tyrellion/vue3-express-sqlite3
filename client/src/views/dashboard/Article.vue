@@ -169,13 +169,23 @@ const update = async () => {
 }
 //跳转删除
 const toDelete = async (blog) => {
-    let res = await axios.delete("/blog/_token/delete?id="+blog.id)
+   
+    dialog.warning({
+    title: '警告',
+    content: '是否要删除',
+    positiveText: '确定',
+    negativeText: '取消',
+    onPositiveClick: async () => {
+        let res = await axios.delete("/blog/_token/delete?id="+blog.id)
     if (res.data.code == 200) {
         message.info(res.data.msg)
         loadBlogs()
     } else {
         message.error(res.data.msg)
     }
+    },
+    onNegativeClick: () => { }
+})
 }
 </script>
 

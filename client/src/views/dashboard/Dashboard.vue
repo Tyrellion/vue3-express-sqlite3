@@ -2,7 +2,7 @@
   <div class="main-panel">
     <div class="menus">
         <div v-for="(menu, index) in menus" @click="toPage(menu,index)" 
-        :class="{ 'selected': selectedMenuIndex === index }">
+        :class="{ 'selected': selectedMenuIndex === index }"><!-- 通过赋值v-for元素类名的方法实现了后台点击后变色的效果 -->
                 {{ menu.name }}
             </div>
         </div>

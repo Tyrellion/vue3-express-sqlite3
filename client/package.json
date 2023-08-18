@@ -11,6 +11,7 @@
   "dependencies": {
     "@wangeditor/editor-for-vue": "^5.1.12",
     "axios": "^1.4.0",
+    "marked": "^7.0.3",
     "pinia": "^2.1.6",
     "sass": "^1.64.1",
     "vue": "^3.3.4",

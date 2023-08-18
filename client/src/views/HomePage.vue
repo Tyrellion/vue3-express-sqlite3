@@ -28,7 +28,7 @@
           </n-card>
         </div>
 
-        <n-pagination @update:page="loadBlogs" v-model:page="pageInfo.page" :page-count="pageInfo.count" />
+        <n-pagination @update:page="loadBlogs" v-model:page="pageInfo.page" :page-count="pageInfo.pageCount" />
 
     <n-divider/>
     <div class="footer">

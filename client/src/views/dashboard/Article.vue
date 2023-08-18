@@ -26,10 +26,10 @@
       <n-tab-pane name="add" tab="添加文章">
         <n-form>
                 <n-form-item label="标题">
-                    <n-input v-model:value="addArticle.title" placeholder="请输入标题" />
+                    <n-input v-model:value="addArticle.title" placeholder="请输入标题"  />
                 </n-form-item>
-                <n-form-item label="分类">
-                    <n-select v-model:value="addArticle.categoryId" :options="categortyOptions" />
+                <n-form-item label="分类" >
+                    <n-select v-model:value="addArticle.categoryId" :options="categortyOptions" default-value="21" />
                 </n-form-item>
                 <n-form-item label="内容">
                     <rich-text-editor v-model="addArticle.content"></rich-text-editor><!--  将 addArticle.content 作为父组件传递给子组件的一个 prop，监听子组件触发的 update:modelValue 事件，当事件触发时，将传递的新值更新到 addArticle.content。-->
@@ -77,14 +77,14 @@ const adminStore = AdminStore()
 
 //文章添加数据
 const addArticle = reactive({
-    categoryId: 0,
+    categoryId: '请选择',
     title: "",
     content: "",
 })
 //文章修改数据
 const updateArticle = reactive({
     id: 0,
-    categoryId: 0,
+    categoryId: '请选择',
     title: "",
     content: "",
 })
